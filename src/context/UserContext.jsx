@@ -1,6 +1,6 @@
-import { createContect, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
-const UserContext = createContect();
+const UserContext = createContext();
 
 export const useUser = () => {
   return useContext(UserContext);
