@@ -4,7 +4,7 @@ const ProfileActions = () => {
   return (
     <ul>
       <li>
-        <Link to="/translations">Translations</Link>
+        <Link to="/translate">Translate</Link>
       </li>
       <li>
         <button>Clear history</button>
