@@ -15,6 +15,11 @@ export const translateAdd = async (user, text) => {
       throw new Error("Could not update translation history");
     }
     const result = await response.json();
+    let currentTranslations = [...result.translations];
+    if (currentTranslations.length > 9) {
+      currentTranslations.shift();
+      result.translations = currentTranslations;
+    }
     return result;
   } catch (error) {
     console.log(error);

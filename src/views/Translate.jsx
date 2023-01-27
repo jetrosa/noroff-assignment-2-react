@@ -5,16 +5,17 @@ import { STORAGE_KEY_USER } from "../const/storageKeys";
 import { useUser } from "../context/UserContext";
 import withAuth from "../auth/withAuth";
 import { storageSave } from "../utils/storage";
+import Translated from "../components/Translate/Translated";
 
 const Translate = () => {
-  const [translated, setTranslated] = useState(null);
+  const [inputText, setInputText] = useState("");
   const { user, setUser } = useUser();
 
   const handleTranslateClick = async (originalText) => {
     if (originalText.trim() === "") {
       return;
     }
-    setTranslated(originalText);
+    setInputText(originalText);
 
     let updatedUser = user;
     updatedUser = await translateAdd(user, originalText);
@@ -30,7 +31,9 @@ const Translate = () => {
       <section id="translate-original">
         <TranslateForm onTranslate={handleTranslateClick} />
       </section>
-      <section id="translated">{translated}</section>
+      <section id="translated-img">
+        <Translated input={inputText} />
+      </section>
     </>
   );
 };
