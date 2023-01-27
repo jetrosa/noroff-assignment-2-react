@@ -6,15 +6,14 @@ const Translated = ({ input }) => {
 
   useEffect(() => {
     const imgArray = [];
-    const sentence = input.toLowerCase();
     for (let i = 0; i < input.length; i++) {
       if (input.charAt(i) !== " ") {
         imgArray.push(
           <img
-            src={`/img/signs/${sentence.charAt(i)}.png`}
-            alt={""}
-            width={70}
-            height={70}
+            src={`/img/signs/${input.charAt(i).toLowerCase()}.png`}
+            alt={input.charAt(i)}
+            width={60}
+            height={60}
           />
         );
       }

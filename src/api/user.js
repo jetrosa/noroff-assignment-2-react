@@ -5,7 +5,7 @@ const checkForUser = async (username) => {
   try {
     const response = await fetch(`${apiUrl}?username=${username}`);
     if (!response.ok) {
-      throw new Error("Çould not complete the request.");
+      throw new Error("Could not complete the request.");
     }
     const data = await response.json();
     return [null, data];
@@ -24,7 +24,7 @@ const userCreate = async (username) => {
       }),
     });
     if (!response.ok) {
-      throw new Error("Çould not create user with username " + username);
+      throw new Error("Could not create user with username " + username);
     }
     const data = await response.json();
     return [null, data];
@@ -52,7 +52,7 @@ export const findUserById = async (userId) => {
     const response = await fetch(`${apiUrl}/${userId}`);
 
     if (!response.ok) {
-      throw new Error("Çould not fetch the user.");
+      throw new Error("Could not fetch the user.");
     }
     const user = await response.json();
     return [null, user];
