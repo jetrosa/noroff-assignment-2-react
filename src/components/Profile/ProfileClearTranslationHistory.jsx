@@ -1,18 +1,11 @@
-import { Link } from "react-router-dom";
+import { TrashIcon } from "@heroicons/react/24/solid";
 import { translateClearHistory } from "../../api/history";
 import { STORAGE_KEY_USER } from "../../const/storageKeys";
 import { useUser } from "../../context/UserContext";
-import { storageDelete, storageSave } from "../../utils/storage";
+import { storageSave } from "../../utils/storage";
 
-const ProfileActions = () => {
+const ProfileClearTranslationHistory = () => {
   const { user, setUser } = useUser();
-
-  const handleLogoutClick = () => {
-    if (window.confirm("Are you sure?")) {
-      storageDelete(STORAGE_KEY_USER);
-      setUser(null);
-    }
-  };
 
   const handleClearHistoryClick = async () => {
     if (!window.confirm("Are you sure?")) {
@@ -29,14 +22,10 @@ const ProfileActions = () => {
     setUser(updatedUser);
   };
   return (
-    <ul>
-      <li>
-        <button onClick={handleClearHistoryClick}>Clear history</button>
-      </li>
-      <li>
-        <button onClick={handleLogoutClick}>Logout</button>
-      </li>
-    </ul>
+    <TrashIcon
+      style={{ height: 24, width: 24 }}
+      onClick={handleClearHistoryClick}
+    />
   );
 };
-export default ProfileActions;
+export default ProfileClearTranslationHistory;

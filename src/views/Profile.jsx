@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { findUserById } from "../api/user";
-import ProfileActions from "../components/Profile/ProfileActions";
+import ProfileClearHistory from "../components/Profile/ProfileClearTranslationHistory";
 import ProfileHeader from "../components/Profile/ProfileHeader";
 import ProfileTranslateHistory from "../components/Profile/ProfileTranslateHistory";
 import { STORAGE_KEY_USER } from "../const/storageKeys";
@@ -26,7 +26,7 @@ const Profile = () => {
     <>
       <h1>Profile</h1>
       <ProfileHeader username={user.username} />
-      <ProfileActions />
+      <ProfileClearHistory />
       <ProfileTranslateHistory translations={user.translations} />
     </>
   );

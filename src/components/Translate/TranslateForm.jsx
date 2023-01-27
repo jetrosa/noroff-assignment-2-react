@@ -9,17 +9,18 @@ const TranslateForm = ({ onTranslate }) => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <fieldset>
-          <label htmlFor="original-text"></label>
-          <input
-            type="text"
-            {...register("originalText")}
-            placeholder="Text to be translated"
-          />
-        </fieldset>
+      <div className="mb-3">
+        <label htmlFor="original-text"></label>
+        <input
+          type="text"
+          className="form-control mb-2"
+          {...register("originalText")}
+          placeholder="Text to be translated"
+        />
 
-        <button type="submit">Translate</button>
+        <button type="submit" className="btn btn-primary">
+          Translate
+        </button>
       </div>
     </form>
   );

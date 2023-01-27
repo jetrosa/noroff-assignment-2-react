@@ -25,7 +25,7 @@ const LoginForm = () => {
 
   useEffect(() => {
     if (user !== null) {
-      navigate("/profile");
+      navigate("/translate");
     }
   }, [user, navigate]);
 
@@ -59,22 +59,31 @@ const LoginForm = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <fieldset>
-          <label htmlFor="username">Username: </label>
-          <input
-            type="text"
-            placeholder="username"
-            {...register("username", userNameConfig)}
-          />
-          {errorMessage}
-        </fieldset>
-        <button type="submit" disabled={loading}>
-          Continue
-        </button>
-        {loading && <p>Logging in...</p>}
-        {apiError && <p>{apiError}</p>}
-      </form>
+      <div>
+        <div className="text-center fw-bold mb-5 ">Login</div>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="form-group mb-4">
+            <label htmlFor="username">Username</label>
+            <input
+              className="form-control"
+              type="text"
+              {...register("username", userNameConfig)}
+            />
+            {errorMessage}
+          </div>
+          <div className="text-center mb-4 d-grid gap-2">
+            <button
+              type="submit"
+              className="btn btn-primary"
+              disabled={loading}
+            >
+              Sign In
+            </button>
+          </div>
+          {loading && <p>Logging in...</p>}
+          {apiError && <p>{apiError}</p>}
+        </form>
+      </div>
     </>
   );
 };

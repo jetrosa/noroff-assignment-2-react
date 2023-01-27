@@ -1,10 +1,11 @@
 import LoginForm from "../components/Login/LoginForm";
 const Login = () => {
   return (
-    <>
-      <h1>Login</h1>
-      <LoginForm></LoginForm>
-    </>
+    <div className="row d-flex justify-content-center">
+      <div className="col-4 ">
+        <LoginForm></LoginForm>
+      </div>
+    </div>
   );
 };
 export default Login;
