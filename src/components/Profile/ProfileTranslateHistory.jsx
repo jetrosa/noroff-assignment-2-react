@@ -9,11 +9,12 @@ const ProfileTranslateHistory = ({ translations }) => {
     />
   ));
   return (
-    <section className="flex flex-col p-5">
-      <div className="justify-between flex">
-        <p className="mt-2 font-ec text-md text-gray">Translation history</p>
+    <section>
+      <div>
+        <p>Translation history</p>
 
         <TrashIcon
+          style={{ height: 24, width: 24 }}
           onClick={() => {
             //clear
           }}
