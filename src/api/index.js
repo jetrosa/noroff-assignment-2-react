@@ -2,8 +2,8 @@ const apiKey = process.env.REACT_APP_API_KEY;
 
 export const createHeaders = () => {
   return {
-    "content-Type": "application/json",
-    "x-api-key": apiKey,
+    "Content-Type": "application/json",
+    "X-API-Key": apiKey,
   };
 };
 export const handleResponse = () => {};

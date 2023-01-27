@@ -13,7 +13,7 @@ const checkForUser = async (username) => {
     return [error.message, []];
   }
 };
-const createUser = async (username) => {
+const userCreate = async (username) => {
   try {
     const response = await fetch(apiUrl, {
       method: "POST",
@@ -33,7 +33,7 @@ const createUser = async (username) => {
   }
 };
 
-export const loginUser = async (username) => {
+export const userLogin = async (username) => {
   const [checkError, user] = await checkForUser(username);
 
   if (checkError !== null) {
@@ -44,5 +44,19 @@ export const loginUser = async (username) => {
     return [null, user.pop()];
   }
 
-  return await createUser(username);
+  return await userCreate(username);
+};
+
+export const findUserById = async (userId) => {
+  try {
+    const response = await fetch(`${apiUrl}/${userId}`);
+
+    if (!response.ok) {
+      throw new Error("Çould not fetch the user.");
+    }
+    const user = await response.json();
+    return [null, user];
+  } catch (error) {
+    return [error.message, null];
+  }
 };

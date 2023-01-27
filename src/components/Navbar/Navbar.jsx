@@ -6,14 +6,12 @@ const Navbar = () => {
 
   return (
     <nav>
-      <ul>
-        <li>Translation</li>
-      </ul>
+      <h2>Lost in Translation</h2>
 
       {user !== null && (
         <ul>
           <li>
-            <NavLink to="/translate">Orders</NavLink>
+            <NavLink to="/translate">Translate</NavLink>
           </li>
           <li>
             <NavLink to="/profile">Profile</NavLink>
