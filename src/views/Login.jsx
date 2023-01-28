@@ -1,8 +1,10 @@
+import "./login.css";
+
 import LoginForm from "../components/Login/LoginForm";
 const Login = () => {
   return (
-    <div className="row d-flex justify-content-center">
-      <div className="col-4 ">
+    <div className="row justify-content-center">
+      <div id="login">
         <LoginForm></LoginForm>
       </div>
     </div>

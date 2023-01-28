@@ -71,7 +71,7 @@ const LoginForm = () => {
             />
             {errorMessage}
           </div>
-          <div className="text-center mb-4 d-grid gap-2">
+          <div className="text-center mb-4 d-grid">
             <button
               type="submit"
               className="btn btn btn-dark"
