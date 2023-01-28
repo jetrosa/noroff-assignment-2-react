@@ -9,17 +9,17 @@ const NavBar = () => {
   return (
     <>
       <Navbar bg="dark" variant="dark">
+        <Navbar.Brand className="navbar-brand mx-5">
+          <img
+            alt=""
+            src="/img/Logo.png"
+            width="30"
+            height="30"
+            className="align-top"
+          />{" "}
+          Lost in Translation
+        </Navbar.Brand>
         <Container className="container-fluid">
-          <Navbar.Brand className="navbar-brand me-5">
-            <img
-              alt=""
-              src="/img/Logo.png"
-              width="30"
-              height="30"
-              className="align-top"
-            />{" "}
-            Lost in Translation
-          </Navbar.Brand>
           {user !== null && (
             <Nav className="me-auto">
               <Nav.Link as={NavLink} to="/translate">
@@ -30,12 +30,12 @@ const NavBar = () => {
               </Nav.Link>
             </Nav>
           )}
-          {user !== null && (
-            <div>
-              <ProfileLogout></ProfileLogout>
-            </div>
-          )}
         </Container>
+        {user !== null && (
+          <div className="me-3">
+            <ProfileLogout></ProfileLogout>
+          </div>
+        )}
       </Navbar>
     </>
   );
