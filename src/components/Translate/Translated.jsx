@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-const imgPx = 60;
+const imgPx = 70;
 
 //Translation using sign images
 /**
