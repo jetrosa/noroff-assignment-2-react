@@ -8,6 +8,12 @@ const apiUrl = process.env.REACT_APP_API_URL;
  * @returns {JSON} Returns a JSON response (updated user)
  */
 export const translationAdd = async (user, text) => {
+  const currentTranslations = [...user.translations];
+  if (currentTranslations.length > 9) {
+    currentTranslations.shift();
+    user.translations = currentTranslations;
+  }
+
   try {
     const response = await fetch(`${apiUrl}/${user.id}`, {
       method: "PATCH",
@@ -21,11 +27,6 @@ export const translationAdd = async (user, text) => {
       throw new Error("Could not update translation history");
     }
     const result = await response.json();
-    let currentTranslations = [...result.translations];
-    if (currentTranslations.length > 9) {
-      currentTranslations.shift();
-      result.translations = currentTranslations;
-    }
     return result;
   } catch (error) {
     console.log(error);
