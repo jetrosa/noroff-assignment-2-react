@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { translateAdd } from "../api/history";
+import { translationAdd } from "../api/translation";
 import TranslateForm from "../components/Translate/TranslateForm";
 import { STORAGE_KEY_USER } from "../const/storageKeys";
 import { useUser } from "../context/UserContext";
@@ -18,7 +18,8 @@ const Translate = () => {
     setInputText(originalText);
 
     let updatedUser = user;
-    updatedUser = await translateAdd(user, originalText);
+    updatedUser = await translationAdd(user, originalText);
+
     if (updatedUser !== null) {
       storageSave(STORAGE_KEY_USER, updatedUser);
       setUser(updatedUser);

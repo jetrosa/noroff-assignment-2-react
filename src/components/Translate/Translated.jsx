@@ -1,6 +1,11 @@
 import "./translation.css";
 import { useEffect, useState } from "react";
 
+//Translation using sign images
+/**
+ * Area including the translation (sign images).
+ * @returns Translation area
+ */
 const Translated = ({ input }) => {
   const [translationImages, setTranslationsImages] = useState([]);
 

@@ -1,7 +1,7 @@
 const ProfileHeader = ({ username }) => {
   return (
     <header>
-      <h3>Welcome back {username}</h3>
+      <h3>Signed in as: {username}</h3>
     </header>
   );
 };

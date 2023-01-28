@@ -1,5 +1,5 @@
 import { TrashIcon } from "@heroicons/react/24/solid";
-import { translateClearHistory } from "../../api/history";
+import { translationClearHistory } from "../../api/translation";
 import { STORAGE_KEY_USER } from "../../const/storageKeys";
 import { useUser } from "../../context/UserContext";
 import { storageSave } from "../../utils/storage";
@@ -11,7 +11,7 @@ const ProfileClearTranslationHistory = () => {
     if (!window.confirm("Are you sure?")) {
       return;
     }
-    await translateClearHistory(user.id);
+    await translationClearHistory(user.id);
 
     const updatedUser = {
       ...user,

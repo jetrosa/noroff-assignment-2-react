@@ -1,6 +1,11 @@
 import { createHeaders } from "./index";
 const apiUrl = process.env.REACT_APP_API_URL;
 
+/**
+ * Checks if a user exists in the database (fetch user by username).
+ * @param {String} username
+ * @returns {[error.message, [data]]} error message and response (user) as JSON
+ */
 const checkForUser = async (username) => {
   try {
     const response = await fetch(`${apiUrl}?username=${username}`);
@@ -13,6 +18,12 @@ const checkForUser = async (username) => {
     return [error.message, []];
   }
 };
+
+/**
+ * Creates a new user (API POST)
+ * @param {String} username
+ * @returns {[error.message, [data]]} error message and response (user) as JSON
+ */
 const userCreate = async (username) => {
   try {
     const response = await fetch(apiUrl, {
@@ -33,6 +44,12 @@ const userCreate = async (username) => {
   }
 };
 
+/**
+ * Checks if a user by the provided username exists and retrieve the user.
+ * Creates a new user if the user doesn't exist yet.
+ * @param {*} username
+ * @returns {[error.message, [data]]} error message and response (user) as JSON
+ */
 export const userLogin = async (username) => {
   const [checkError, user] = await checkForUser(username);
 
@@ -44,9 +61,14 @@ export const userLogin = async (username) => {
     return [null, user.pop()];
   }
 
-  return await userCreate(username);
+  return userCreate(username);
 };
 
+/**
+ * Checks if a user exists in the database (fetch user by ID).
+ * @param {number} userId
+ * @returns {[error.message, [data]]} error message and response (user) as JSON
+ */
 export const findUserById = async (userId) => {
   try {
     const response = await fetch(`${apiUrl}/${userId}`);

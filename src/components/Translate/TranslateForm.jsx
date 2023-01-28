@@ -1,5 +1,9 @@
 import { useForm } from "react-hook-form";
 
+/**
+ * Form for submitting a text that is translated into sign images.
+ * @returns Translate form (original text)
+ */
 const TranslateForm = ({ onTranslate }) => {
   const { register, handleSubmit } = useForm();
 

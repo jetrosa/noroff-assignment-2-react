@@ -1,7 +1,13 @@
 import { createHeaders } from "./index";
 const apiUrl = process.env.REACT_APP_API_URL;
 
-export const translateAdd = async (user, text) => {
+/**
+ * Stores a text that was translated into the user's translation history (API PATCH).
+ * @param {user} user User object (logged in user)
+ * @param {*} text Original text that was translated
+ * @returns {JSON} Returns a JSON response (updated user)
+ */
+export const translationAdd = async (user, text) => {
   try {
     const response = await fetch(`${apiUrl}/${user.id}`, {
       method: "PATCH",
@@ -27,7 +33,12 @@ export const translateAdd = async (user, text) => {
   }
 };
 
-export const translateClearHistory = async (userId) => {
+/**
+ * Truncates user's translation history in the API (PATCH).
+ * @param {*} userId
+ * @returns {JSON} Returns a JSON response (updated user)
+ */
+export const translationClearHistory = async (userId) => {
   try {
     const response = await fetch(`${apiUrl}/${userId}`, {
       method: "PATCH",
