@@ -13,8 +13,8 @@ const ProfileTranslateHistory = ({ translations }) => {
     ));
   return (
     <section>
-      <div class="d-flex">
-        <div class="me-3">
+      <div className="d-flex">
+        <div className="me-3">
           <h4>Your translation history</h4>
         </div>
         <ProfileClearTranslationHistory />

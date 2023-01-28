@@ -24,7 +24,7 @@ const ProfileClearTranslationHistory = () => {
     setUser(updatedUser);
   };
   return (
-    <div class="image-button" onClick={handleClearHistoryClick}>
+    <div className="image-button" onClick={handleClearHistoryClick}>
       <TrashIcon style={{ height: 30, width: 30 }} />
     </div>
   );
