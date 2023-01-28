@@ -1,0 +1,12 @@
+#profile-header{
+    
+    margin-bottom: 1em;
+}
+#profile-header-bg{
+    background-color: #B3DEC1;
+    margin-bottom: 2em;
+}
+
+.image-button{
+    cursor: pointer;
+}

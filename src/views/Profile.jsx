@@ -1,6 +1,6 @@
+import "./profile.css";
 import { useEffect } from "react";
 import { findUserById } from "../api/user";
-import ProfileClearTranslationHistory from "../components/Profile/ProfileClearTranslationHistory";
 import ProfileHeader from "../components/Profile/ProfileHeader";
 import ProfileTranslateHistory from "../components/Profile/ProfileTranslateHistory";
 import { STORAGE_KEY_USER } from "../const/storageKeys";
@@ -24,10 +24,21 @@ const Profile = () => {
 
   return (
     <>
-      <h1>Profile</h1>
-      <ProfileHeader username={user.username} />
-      <ProfileClearTranslationHistory />
-      <ProfileTranslateHistory translations={user.translations} />
+      <div id="profile-header-bg" className="row d-flex justify-content-center">
+        <div className="col-7 mt-2">
+          <h1>Profile</h1>
+          <div id="profile-header">
+            <ProfileHeader username={user.username} />
+          </div>
+        </div>
+      </div>
+      <div id="profile-history" className="row d-flex justify-content-center">
+        <div className="col-7 ">
+          <div id="profile-history">
+            <ProfileTranslateHistory translations={user.translations} />
+          </div>
+        </div>
+      </div>
     </>
   );
 };

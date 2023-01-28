@@ -9,14 +9,14 @@ const NavBar = () => {
   return (
     <>
       <Navbar bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand>
+        <Container className="container-fluid">
+          <Navbar.Brand className="navbar-brand me-5">
             <img
               alt=""
               src="/img/Logo.png"
               width="30"
               height="30"
-              className="d-inline-block align-top"
+              className="align-top"
             />{" "}
             Lost in Translation
           </Navbar.Brand>
@@ -28,8 +28,12 @@ const NavBar = () => {
               <Nav.Link as={NavLink} to="/profile">
                 Profile
               </Nav.Link>
-              <ProfileLogout></ProfileLogout>
             </Nav>
+          )}
+          {user !== null && (
+            <div>
+              <ProfileLogout></ProfileLogout>
+            </div>
           )}
         </Container>
       </Navbar>

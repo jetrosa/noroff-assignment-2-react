@@ -12,6 +12,10 @@ const ProfileLogout = () => {
     }
   };
 
-  return <button onClick={handleLogoutClick}>Logout</button>;
+  return (
+    <button onClick={handleLogoutClick} className="btn btn-outline-light">
+      Logout
+    </button>
+  );
 };
 export default ProfileLogout;

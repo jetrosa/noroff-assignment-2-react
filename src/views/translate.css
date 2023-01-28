@@ -1,0 +1,16 @@
+#translate-form{
+    background-color: #CCC9DC;
+  }
+
+.translation-container {
+  background-color: rgb(250, 250, 250);
+  border-radius: 10px;
+  box-shadow: 1px 1px 8px rgb(185, 185, 187);
+  height: 20em;
+}
+
+.translation-text {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

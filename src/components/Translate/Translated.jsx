@@ -1,4 +1,3 @@
-import "./translation.css";
 import { useEffect, useState } from "react";
 
 //Translation using sign images
@@ -28,9 +27,11 @@ const Translated = ({ input }) => {
 
   return (
     <div className="translation-container">
-      {translationImages.map((item, index) => (
-        <div key={index}>{item}</div>
-      ))}
+      <div className="translation-text">
+        {translationImages.map((item, index) => (
+          <div key={index}>{item}</div>
+        ))}
+      </div>
     </div>
   );
 };

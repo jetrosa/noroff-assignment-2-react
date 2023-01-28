@@ -1,3 +1,4 @@
+import "./translate.css";
 import { useState } from "react";
 import { translationAdd } from "../api/translation";
 import TranslateForm from "../components/Translate/TranslateForm";
@@ -27,15 +28,26 @@ const Translate = () => {
   };
 
   return (
-    <>
-      <h1>Translate</h1>
-      <section id="translate-original">
-        <TranslateForm onTranslate={handleTranslateClick} />
-      </section>
-      <section id="translated-img">
-        <Translated input={inputText} />
-      </section>
-    </>
+    <div className="">
+      <div
+        id="translate-form"
+        className="row d-flex justify-content-center mb-3"
+      >
+        <div className="col-md-7 m-2">
+          <h1>Translate</h1>
+          <section id="translate-original" className="mb-1">
+            <TranslateForm onTranslate={handleTranslateClick} />
+          </section>
+        </div>
+      </div>
+      <div className="row d-flex justify-content-center">
+        <div className="col-md-7 m-2">
+          <section id="translated-img">
+            <Translated input={inputText} />
+          </section>
+        </div>
+      </div>
+    </div>
   );
 };
 export default withAuth(Translate);

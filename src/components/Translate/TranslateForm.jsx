@@ -22,7 +22,7 @@ const TranslateForm = ({ onTranslate }) => {
           placeholder="Text to be translated"
         />
 
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-secondary">
           Translate
         </button>
       </div>

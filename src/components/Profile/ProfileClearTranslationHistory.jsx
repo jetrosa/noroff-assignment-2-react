@@ -8,7 +8,9 @@ const ProfileClearTranslationHistory = () => {
   const { user, setUser } = useUser();
 
   const handleClearHistoryClick = async () => {
-    if (!window.confirm("Are you sure?")) {
+    if (
+      !window.confirm("Your translation history will be deleted. Are you sure?")
+    ) {
       return;
     }
     await translationClearHistory(user.id);
@@ -22,10 +24,9 @@ const ProfileClearTranslationHistory = () => {
     setUser(updatedUser);
   };
   return (
-    <TrashIcon
-      style={{ height: 24, width: 24 }}
-      onClick={handleClearHistoryClick}
-    />
+    <div class="image-button" onClick={handleClearHistoryClick}>
+      <TrashIcon style={{ height: 30, width: 30 }} />
+    </div>
   );
 };
 export default ProfileClearTranslationHistory;

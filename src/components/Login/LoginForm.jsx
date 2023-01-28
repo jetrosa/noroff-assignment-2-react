@@ -74,7 +74,7 @@ const LoginForm = () => {
           <div className="text-center mb-4 d-grid gap-2">
             <button
               type="submit"
-              className="btn btn-primary"
+              className="btn btn btn-dark"
               disabled={loading}
             >
               Sign In
